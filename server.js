@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/week18day3mongoose");
+mongoose.connect("mongodb://heroku_1nkd46s5:mt7kvcftukgelih4fdodla6lvo@ds153609.mlab.com:53609/heroku_1nkd46s5");
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -145,6 +145,12 @@ app.post("/articles/:id", function(req, res) {
     }
   });
 });
+
+// DELETE route for deleting todos. We can get the id of the todo to be deleted from
+// req.params.id
+  // app.delete("/articles/:id", function(req, res) {
+    // We just have to specify which todo we want to destroy with "where"
+    // });
 
 
 // Listen on port 3000
